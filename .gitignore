@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Ignore kaggle dir
+.kaggle/
+
+
 # Distribution / packaging
 .Python
 build/
