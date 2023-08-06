@@ -1,13 +1,22 @@
 #!/bin/bash
 
 # Create the conda environment
-conda create -n nbme_sandwich python=3.11 -y
+conda create -n ner_nbme python=3.11 -y
 
 # Activate the conda environment
-source activate nbme_sandwich
+conda activate ner_nbme
 
 # Install the required packages
-pip install --editable .
+pip install --upgrade --editable .
+
+# Add conda environment to Jupyter
+python -m ipykernel install --user --name=ner_nbme
+
+# Update Jupyter and ipywidgets
+pip install --upgrade jupyter ipywidgets
+
+#Download `en_core_web_sm` SpaCy model
+python -m spacy download en_core_web_sm
 
 # Download Kaggle competition
 
